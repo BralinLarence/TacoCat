@@ -41,14 +41,14 @@ nav {
 }
 
 .nav-content-color:hover {
-    color: var(--white-color)
+    color: var(--white-color);
 }
 
 a.nav-link:link {
-    color: var(--secondary-color)
+    color: var(--secondary-color);
 }
 a.nav-link:visited {
-    color: var(--secondary-color)
+    color: var(--secondary-color);
 }
 
 a.nav-link:active {
