@@ -47,7 +47,7 @@
                         <a class="nav-link active nav-content-font nav-content-color" href="code.html">Code</a>
                     </li>                    
                     <li class="nav-item ">
-                        <a class="nav-link nav-content-font nav-content-color" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link nav-content-font nav-content-color" target="_blank" href="https://github.com/BralinLarence/TacoCat">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-content-font nav-content-color" target="_blank" href="#">About</a>
@@ -63,9 +63,78 @@
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                            // Call Hello World
-                            function HelloWorld() {
-                            alert("Hello World");
+                            //CONTROLLER FUNCTION(S)
+                            //Get the values of the string
+                            function getValue() {
+                                document.getElementById("alert").classList.add("invisible");
+
+                                // Get user input
+                                let userString = document.getElementById("userString").value;
+                            
+                                //Check for palindrome
+                                let returnObj = isPalindrome(userString);
+
+                                // display message to the screen
+                                displayMessage(returnObj)
+                            }
+
+                            //LOGIC FUNCTION(S)
+                            //Check string for palindrome
+                            function isPalindrome(_userString) {
+                            
+                                _userString = _userString.toLowerCase();
+                            
+                                //remove spaces in special characters
+                                let regex =/[^a-z0-9]/gi;
+                                _userString = _userString.replace(regex, "");
+
+                                //reverse the string
+                                let reversedString = [];
+                                let returnObj = {};
+
+                                for (let index = _userString.length - 1; index >= 0; index--) {
+                                reversedString += _userString[index];
+                                }
+
+                                //Check if a Palindrome is entered.
+                                if(reversedString == _userString)
+                                {
+                                    returnObj.msg = "Well Done! You entered a Palindrome!";
+                                    returnObj.isTrue = true;
+                                }
+                                else{
+                                    returnObj.msg = "Sorry! you did not enter a Palindrome!";
+                                    returnObj.isTrue = false;
+                                }
+
+                                returnObj.reversed = reversedString;
+
+                                return returnObj
+                            }
+
+                            //VIEW FUNCTION(S)
+                            //Display the reversed string to the user
+                            function displayMessage(returnObj) {
+
+                                if(returnObj.isTrue)
+                                {
+                                    document.getElementById("alert").classList.remove("invisible", "alert-danger");
+                                    document.getElementById("alert").classList.add("alert-success");
+                                    document.getElementById("message").classList.remove("alert-danger");
+                                    document.getElementById("message").classList.add("alert-success");
+                                    document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                                    document.getElementById("message").innerHTML = `Your phrase reversed is: ${returnObj.reversed}`;
+                                    
+                                }
+                                else
+                                {
+                                    document.getElementById("alert").classList.remove("invisible", "alert-success");
+                                    document.getElementById("alert").classList.add("alert-danger");
+                                    document.getElementById("message").classList.remove("alert-success"); 
+                                    document.getElementById("message").classList.add("alert-danger");
+                                    document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                                    document.getElementById("message").innerHTML = `Your phrase reversed is: ${returnObj.reversed}`;       
+                                }
                             }
                     </code>
                     </pre>
@@ -78,6 +147,27 @@
                         design pattern . Each function has its own responsibilities which makes it easier to maintain and update the 
                         code base through it's life cycle. 
                     </p>
+                    <h5 class="main-content-sub-font">getValue</h5>
+                    <p>
+                        The controller function <strong>getValues</strong> calls the input value from the userString variable. Next, it calls the isPalindrome
+                        function to check if the userString is a palindrome and returns the value to the variable returnObj. Finally, the returnObj is passed
+                        into the function displayMessage as an argument.  
+                    </p>
+                    <h5 class="main-content-sub-font">isPalindrome</h5>
+                    <p>
+                        Inside the isPalindrome function we set the value of the userString variable to lower case. Then call a function on the userString 
+                        variable called replace(). We set the parameters to a regex and empty string argument that determines if any whitespace or special 
+                        characters are in the string, removes and replaces it with the empty string. Next, a for loop is used to reverse the string.
+                        An if/else statement then compares the reversed string with the original. If the string is a Palindrome then a message will state that 
+                        and set the returnObj property isTrue to true, otherwise a message will state that it is not and the returnObj isTrue property will return false. 
+                        Lastly, we assign the reversed string to the reversed property of the object and return it.  
+                    </p>
+                    <h5 class="main-content-sub-font">displayMessage</h5>
+                    <p>
+                        The displayMessage function will show a green success alert window if the property of the object returnObj is 
+                        true, meaning the input string is a Palindrome. If not, then it will display a red alert window stating that the string is not a Palindrome.
+                    </p>
+                    
                 </div>
 
             </div>
@@ -95,8 +185,8 @@
                 </div>
                 <div class="col  px-5 d-flex align-items-center justify-content-center justify-content-lg-center">
                     <div class="row">
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://github.com/BralinLarence/TacoCat" target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://www.linkedin.com/in/bralin-r-2791b9253/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
                         <!--<div class="col social"><a href="#" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></div>
                         <div class="col social"><a href="#" target="_blank"><i class="fab fa-youtube fa-2x"></i></a></div> -->
                     </div>
