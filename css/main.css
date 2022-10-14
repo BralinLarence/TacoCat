@@ -35,8 +35,13 @@ nav {
     
 }
 
+
 .nav-content-color {
     color: var(--secondary-color);
+}
+
+.nav-content-color:hover {
+    color: var(--white-color)
 }
 
 a.nav-link:link {
