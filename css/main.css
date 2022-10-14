@@ -1,6 +1,7 @@
 :root {
     --primary-color: #854119;
     --secondary-color: #faba0a;
+    --third-color: #f7970e;
     --dark-color: #292929;
     --white-color: #f3f3f3;
 }
@@ -38,9 +39,23 @@ nav {
     color: var(--secondary-color);
 }
 
-.nav-content-color:hover {
-    color: var(--white-color)
+a.nav-link:link {
+    color: var(--secondary-color)
 }
+a.nav-link:visited {
+    color: var(--secondary-color)
+}
+
+a.nav-link:active {
+    color: var(--third-color);
+    outline: none;
+    
+}
+
+a.nav-link:hover {
+    color: var(--white-color);
+}
+
 
 /* === Main === */
 main>.container {
