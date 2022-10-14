@@ -16,35 +16,41 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/img/favicon.ico">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
+
 
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- ==== Nav Section ==== -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/BralinLarence-Brand-Header-Logo-1.svg" class="d-inline-block align-text-top" height="24" width="100">APP NAME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            <a class="navbar-brand nav-content-color nav-content-font " href="#">TACOCAT</a>
+            <button class="navbar-toggler btn-gold-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="custom-toggler-icon"><i class="fa fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link nav-content-color nav-content-font" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="app.html">App</a>
+                        <a class="nav-link active nav-content-font nav-content-color" href="app.html">App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="code.html">Code</a>
+                        <a class="nav-link nav-content-font nav-content-color" href="code.html">Code</a>
+                    </li>                    
+                    <li class="nav-item ">
+                        <a class="nav-link nav-content-font nav-content-color" target="_blank" href="#">Git Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">About</a>
+                        <a class="nav-link nav-content-font nav-content-color" target="_blank" href="#">About</a>
                     </li>
                 </ul>
             </div>
@@ -53,7 +59,39 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container">
-
+            <div class="row row-cols-1 row-cols-lg-2 mt-5">
+                <div class="col border-1 border-end border-dark">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 main-content-sub-font">Rewind: A Coding Project</h1>
+                    <h4 class="lead pb-3 main-content-sub-font">
+                        TacoCat is a palindrome. A palindrome is a word, phrase, or sequence that reads the same 
+                        backword as forward. Write a program that checks if the phrase entered is a <strong>Palindrome</strong>. 
+                    </h4>
+                </div>
+                <div class="col">
+                    <h5 class="border-1 border-bottom border-dark main-content-sub-font">Enter a string to reverse</h5>
+                    <form class="row gx-3 gy-2" action="">
+                        <div class="col-12">
+                            <input id="userString" type="text" class="form-control" placeholder="Enter a string" aria-label="Enter a string">
+                        </div>
+                        <div class="col">
+                            <div class="row d-flex">
+                                <div class="col mt-4">
+                                    <button type="button" id="btnSubmit" class="btn btn-gold-solid">Reverse Text</button>
+                                    <button type="button" id="btnReset" class="btn btn-gold-solid" >Reset Input</button>
+                                </div>
+                            </div>
+                        </div>                        
+                        
+                        <div class="alert alert-success mt-5 invisible fade show" id="alert" role="alert">
+                            <h4 id="alertHeader" class="alert-heading main-content-sub-font">Well Done!</h4>
+                            <hr>
+                            <p class="mb-0 alert-success main-content-sub-font" id="message">
+                                <!-- Insert a message here with javascript -->
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <!-- ==== Footer Section ==== -->
@@ -61,12 +99,12 @@
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-lg-first d-flex align-items-center justify-content-center text-light ">
-                    <div class="footer-text"><span class="text-mute">&copy;2022</span> Bralin Larence </div>
+                    <div class="footer-text footer-text-color"><span class="text-mute">&copy;2022</span> Bralin Larence </div>
                 </div>
                 <div class="col d-flex align-items-center justify-content-sm-center justify-content-lg-center mb-2">
-                    <img src="/img/BralinLarence-Logo-1.svg" alt="Bralin Larence Logo" class="img-fluid"></img>
+                    <img src="/img/BralinLarence-Footer-Logo-Alt-1.svg" alt="Bralin Larence Logo" class="img-fluid"></img>
                 </div>
-                <div class="col  px-5 d-flex align-items-center justify-content-center justify-content-lg-end">
+                <div class="col  px-5 d-flex align-items-center justify-content-center justify-content-lg-center">
                     <div class="row">
                         <div class="col social"><a href="#" target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
                         <div class="col social"><a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
@@ -83,5 +121,11 @@
         </script>
     <!-- Main JS -->
     <script src="/js/main.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValue);
+    </script>
+    <script>
+        document.getElementById("btnReset").addEventListener("click", clearForm);
+    </script>
 </body>
 </html>
